@@ -1,6 +1,6 @@
 cask "saga" do
-  version "0.1.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "0.2.0"
+  sha256 "5d41ce1ab8d9b8d86f4e4db2f7a25f8882e0f4db288c692ec717f3f2f9d421a8"
 
   url "https://github.com/mhandschuh/saga-release/releases/download/v#{version}/Saga-#{version}.zip"
   name "Saga"
