@@ -22,7 +22,9 @@ cask "saga" do
   caveats <<~EOS
     Saga needs a model (about 3 GB, downloaded once):
       saga-download-model
-    Then open Saga and allow it under System Settings → Privacy & Security → Accessibility.
+    Then open Saga and allow it in System Settings → Privacy & Security (Accessibility and Input Monitoring).
+    Allowed but nothing happens (a permission left from an older build)? Reset and allow again:
+      tccutil reset Accessibility dev.ghostwriter.app && tccutil reset ListenEvent dev.ghostwriter.app
   EOS
 
   zap trash: "~/Library/Application Support/ghostwriter"
