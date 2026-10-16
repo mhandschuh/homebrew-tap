@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Shared hook (source: rea/tools/githooks, copied by `../x hooks`): no secrets in commits, then the project's own checks.
+set -e
+if ! command -v gitleaks >/dev/null; then
+  echo "pre-commit: gitleaks is missing, so secrets can't be checked. Install it: brew install gitleaks" >&2
+  exit 1
+fi
+gitleaks git --staged --redact --no-banner --log-level warn --verbose --exit-code 1 || {
+  echo "pre-commit: gitleaks found something that looks like a secret (above). Remove it from the commit." >&2
+  echo "  A false alarm? Add a '# gitleaks:allow' comment on that line, or a rule to .gitleaks.toml." >&2
+  exit 1
+}
+[ -x .githooks/pre-commit.local ] && .githooks/pre-commit.local
+exit 0
