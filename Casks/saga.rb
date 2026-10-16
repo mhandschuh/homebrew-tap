@@ -7,7 +7,7 @@ cask "saga" do
   desc "Inline text completion everywhere, with a local model"
   homepage "https://github.com/mhandschuh/saga-release"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch: :arm64
   app "Saga.app"
   binary "#{appdir}/Saga.app/Contents/MacOS/ghostwriter", target: "saga"
@@ -15,8 +15,10 @@ cask "saga" do
 
   # Signed with a self-signed certificate, not notarized by Apple: let macOS open it without the
   # "unverified developer" block.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Saga.app"]
+  # Homebrew runs these steps in a sandbox that may write to the Applications folder.
+  quarantined = "#{appdir}/Saga.app"
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", quarantined]
   end
 
   caveats <<~EOS

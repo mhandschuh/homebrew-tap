@@ -7,13 +7,15 @@ cask "heimdall" do
   desc "Fast dual-pane file manager"
   homepage "https://github.com/mhandschuh/heimdall-release"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
   app "Heimdall.app"
 
   # Signed with a self-signed certificate, not notarized by Apple: let macOS open it without the
   # "unverified developer" block.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/Heimdall.app"]
+  # Homebrew runs these steps in a sandbox that may write to the Applications folder.
+  quarantined = "#{appdir}/Heimdall.app"
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", quarantined]
   end
 
   zap trash: [
