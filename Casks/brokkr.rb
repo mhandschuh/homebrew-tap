@@ -4,7 +4,7 @@ cask "brokkr" do
 
   url "https://github.com/mhandschuh/brokkr-release/releases/download/v#{version}/Brokkr-#{version}.zip"
   name "Brokkr"
-  desc "Menu bar toolbox: keep awake, calendar, shelf, scratchpad, mouse tuning"
+  desc "Menu bar toolbox: keep awake, calendar, shelf, scratchpad, mouse, displays"
   homepage "https://github.com/mhandschuh/brokkr-release"
 
   depends_on macos: :sonoma
