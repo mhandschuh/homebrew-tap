@@ -1,6 +1,6 @@
 cask "heimdall" do
-  version "0.3.0"
-  sha256 "455dc118fb29b04e35f557510adb9b9a81628fd3d192b526fa73e3ba39aa1d21"
+  version "0.3.1"
+  sha256 "b2e71e96ebf0dda53273174c5ac83945accc6a4b4cac03c8ec65c08df0ad2573"
 
   url "https://github.com/mhandschuh/heimdall-release/releases/download/v#{version}/Heimdall-#{version}.zip"
   name "Heimdall"
