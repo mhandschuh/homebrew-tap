@@ -10,5 +10,13 @@ gitleaks git --staged --redact --no-banner --log-level warn --verbose --exit-cod
   echo "  A false alarm? Add a '# gitleaks:allow' comment on that line, or a rule to .gitleaks.toml." >&2
   exit 1
 }
+# The spec stays consistent: every criterion traced to a requirement, no references to criteria that don't exist, use
+# cases in the full form (only when the commit touches the spec).
+if [ -f spec/requirements.md ] && [ -f ../tools/specstatus.py ] && git diff --cached --name-only | grep -q '^spec/'; then
+  python3 -I ../tools/specstatus.py --check spec || {
+    echo "pre-commit: the spec is inconsistent (above). Fix it, or see the spec's README for the form." >&2
+    exit 1
+  }
+fi
 [ -x .githooks/pre-commit.local ] && .githooks/pre-commit.local
 exit 0
