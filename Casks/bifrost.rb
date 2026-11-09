@@ -1,6 +1,6 @@
 cask "bifrost" do
   version "0.1.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "4670f32dbc19c90bed1471e66082a5b027e854ae90da091b9d7fdb0a68063476"
 
   url "https://github.com/mhandschuh/bifrost-release/releases/download/v#{version}/Bifrost-#{version}.zip"
   name "Bifrost"
