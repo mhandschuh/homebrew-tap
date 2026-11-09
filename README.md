@@ -6,6 +6,7 @@ The Mac apps of the Pantheon, installable with [Homebrew](https://brew.sh):
 brew install mhandschuh/tap/heimdall   # dual-pane file manager
 brew install mhandschuh/tap/saga       # inline text completion with a local model
 brew install mhandschuh/tap/brokkr     # menu bar toolbox: keep awake, calendar, shelf, scratchpad, mouse
+brew install mhandschuh/tap/bifrost    # window switcher: ⌘Tab opens a ring of windows, letters jump
 brew upgrade --cask                    # updates
 ```
 
