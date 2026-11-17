@@ -7,6 +7,8 @@ brew install mhandschuh/tap/heimdall   # dual-pane file manager
 brew install mhandschuh/tap/saga       # inline text completion with a local model
 brew install mhandschuh/tap/brokkr     # menu bar toolbox: keep awake, calendar, shelf, scratchpad, mouse
 brew install mhandschuh/tap/bifrost    # window switcher: ⌘Tab opens a ring of windows, letters jump
+brew install mhandschuh/tap/odin       # projects with their live Claude Code sessions, in Ghostty
+brew install mhandschuh/tap/hermod     # all mail sorted into categories with reasons, read only
 brew install mhandschuh/tap/gjallar    # terminal: Docker sandboxes, their rules and approvals
 brew upgrade --cask                    # updates of the apps
 brew upgrade gjallar                   # updates of Gjallar
