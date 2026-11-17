@@ -1,6 +1,6 @@
 cask "brokkr" do
-  version "0.4.0"
-  sha256 "3c76fb55199f29dcffe6c64b2485e4f5ee5f34f99f1e116476ac275c23e30953"
+  version "0.4.1"
+  sha256 "11402ff2e588877fbacd3415b6cbeea79a88fedea54102b43ec8e8dce9b1977a"
 
   url "https://github.com/mhandschuh/brokkr-release/releases/download/v#{version}/Brokkr-#{version}.zip"
   name "Brokkr"
