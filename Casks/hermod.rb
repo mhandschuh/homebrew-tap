@@ -1,6 +1,6 @@
 cask "hermod" do
   version "0.1.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  sha256 "e77b2912cf61b0a02a01583ab3ccd24c4dee3e91d4898a87c9045688025fcb6a"
 
   url "https://github.com/mhandschuh/hermod-release/releases/download/v#{version}/Hermod-#{version}.zip"
   name "Hermod"
